@@ -1,11 +1,30 @@
 package beans;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
+	private Integer id;
 	private String name;
 	private String firstName;
 	private String adress;
 	private String phone;
 	private String mail;
+	
+	public void setId(Integer id)
+	{
+		this.id = id;
+	}
+
+	public Integer getId()
+	{
+		return id;
+	}
 	
 	public void setName(String name)
 	{

@@ -9,4 +9,64 @@
 		<servlet-name>CustomerCreation</servlet-name>
 		<url-pattern>/customerCreation</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminProductCreation</servlet-name>
+		<servlet-class>servlets.AdminProductCreation</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminProductCreation</servlet-name>
+		<url-pattern>/AdminProductCreation</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminDisplayCustomerList</servlet-name>
+		<servlet-class>servlets.AdminDisplayCustomerList</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminDisplayCustomerList</servlet-name>
+		<url-pattern>/AdminDisplayCustomerList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DisplayProductList</servlet-name>
+		<servlet-class>servlets.DisplayProductList</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayProductList</servlet-name>
+		<url-pattern>/DisplayProductList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminNewsCreation</servlet-name>
+		<servlet-class>servlets.AdminNewsCreation</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdminNewsCreation</servlet-name>
+		<url-pattern>/AdminNewsCreation</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DisplayNews</servlet-name>
+		<servlet-class>servlets.DisplayNews</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayNews</servlet-name>
+		<url-pattern>/Home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminDeleteCustomer</servlet-name>
+		<servlet-class>servlets.AdminDeleteCustomer</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminDeleteCustomer</servlet-name>
+		<url-pattern>/AdminDeleteCustomer</url-pattern>
+	</servlet-mapping>
 </web-app>

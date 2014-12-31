@@ -12,23 +12,23 @@
                 <fieldset>
                     <legend>Informations client</legend>
     
-                    <label for="customerName">Nom <span class="requis">*</span></label>
+                    <label for="customerName">Nom<span class="requis">*</span></label>
                     <input type="text" id="customerName" name="customerName" value="" size="20" maxlength="20" />
                     <br />
                     
-                    <label for="customerFirstName">Prénom </label>
+                    <label for="customerFirstName">Prénom<span class="requis">*</span></label>
                     <input type="text" id="customerFirstName" name="customerFirstName" value="" size="20" maxlength="20" />
                     <br />
     
-                    <label for="customerAdress">Adresse de livraison <span class="requis">*</span></label>
+                    <label for="customerAdress">Adresse de livraison<span class="requis">*</span></label>
                     <input type="text" id="customerAdress" name="customerAdress" value="" size="20" maxlength="20" />
                     <br />
     
-                    <label for="customerPhone">Numéro de téléphone <span class="requis">*</span></label>
+                    <label for="customerPhone">Numéro de téléphone<span class="requis">*</span></label>
                     <input type="text" id="customerPhone" name="customerPhone" value="" size="20" maxlength="20" />
                     <br />
                     
-                    <label for="customerMail">Adresse email</label>
+                    <label for="customerMail">Adresse email<span class="requis">*</span></label>
                     <input type="email" id="customerMail" name="customerMail" value="" size="20" maxlength="60" />
                     <br />
                 </fieldset>

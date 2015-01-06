@@ -1,4 +1,0 @@
-url = jdbc:mysql://localhost:3306/jweb_db
-driver = com.mysql.jdbc.Driver
-user = root
-password = yLbS3lyy

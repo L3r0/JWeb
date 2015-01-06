@@ -15,6 +15,6 @@ public class AdminDisplayCustomerList extends HttpServlet {
     	DaoCustomer daoCustomer = new DaoCustomer();
         request.setAttribute("customers", daoCustomer.getAllCustomers());
         
-        this.getServletContext().getRequestDispatcher( "/adminDisplayCustomer.jsp" ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/adminDisplayCustomer.jsp" ).forward( request, response );
     }
 }

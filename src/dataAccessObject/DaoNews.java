@@ -19,9 +19,8 @@ public class DaoNews {
 	private Connection connection;
 
     public DaoNews() {
-    	if (connection != null)
-            connection = connection;
-        else {
+    	if (connection == null)
+        {
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             InputStream inputStream = classLoader.getResourceAsStream("/dataAccessObject/properties");
 

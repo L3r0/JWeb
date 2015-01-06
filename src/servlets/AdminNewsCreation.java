@@ -13,6 +13,10 @@ import beans.News;
 public class AdminNewsCreation extends HttpServlet {
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+    	this.getServletContext().getRequestDispatcher( "/WEB-INF/adminCreateNews.jsp" ).forward( request, response );
+    }
+
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
     	String message = null;
     	DaoNews daoNews = new DaoNews();
     	News news = new News();
@@ -29,6 +33,6 @@ public class AdminNewsCreation extends HttpServlet {
         
         request.setAttribute("message", message);
         
-        this.getServletContext().getRequestDispatcher( "/adminDisplayNews.jsp" ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/displayInfo.jsp" ).forward( request, response );
     }
 }

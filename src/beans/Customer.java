@@ -1,15 +1,9 @@
 package beans;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Customer {
 	private Integer id;
+	private String nickName;
+	private String password;
 	private String name;
 	private String firstName;
 	private String adress;
@@ -35,7 +29,27 @@ public class Customer {
 	{
 		return name;
 	}
+	
+	public void setNickName(String nickName)
+	{
+		this.nickName = nickName;
+	}
 
+	public String getNickName()
+	{
+		return nickName;
+	}
+
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+
+	public String getPassword()
+	{
+		return password;
+	}
+	
 	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;

@@ -12,26 +12,33 @@ import beans.Customer;
 
 public class CustomerCreation extends HttpServlet {
 
-    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/createCustomer.jsp" ).forward( request, response );
+		
+	}
+	
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
     	String message = null;
     	DaoCustomer daoCustomer = new DaoCustomer();
     	Customer customer = new Customer();
     	
         customer.setName(request.getParameter("customerName"));
+        customer.setNickName(request.getParameter("customerNickName"));
+        customer.setPassword(request.getParameter("customerPassword"));
         customer.setFirstName(request.getParameter("customerFirstName"));
-        customer.setFirstName(request.getParameter("customerAdress"));
-        customer.setFirstName(request.getParameter("customerPhone"));
-        customer.setFirstName(request.getParameter("customerMail"));
+        customer.setAdress(request.getParameter("customerAdress"));
+        customer.setPhone(request.getParameter("customerPhone"));
+        customer.setMail(request.getParameter("customerMail"));
         daoCustomer.addCustomer(customer);
         
-        if ( customer.getName().trim().isEmpty() || customer.getFirstName().trim().isEmpty() || customer.getAdress().trim().isEmpty() || customer.getPhone().trim().isEmpty() || customer.getMail().trim().isEmpty()) {
+        if ( customer.getName().trim().isEmpty() || customer.getNickName().trim().isEmpty() || customer.getPassword().trim().isEmpty() || customer.getFirstName().trim().isEmpty() || customer.getAdress().trim().isEmpty() || customer.getPhone().trim().isEmpty() || customer.getMail().trim().isEmpty()) {
             message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires.";
         } else {
-            message = "Customer créé avec succès !";
+            message = "Compte créé avec succès ! Vous pouvez maintenant vous connecter.";
         }
         
         request.setAttribute("message", message);
         
-        this.getServletContext().getRequestDispatcher( "/displayCustomer.jsp" ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/displayInfo.jsp" ).forward( request, response );
     }
 }

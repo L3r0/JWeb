@@ -15,6 +15,6 @@ public class DisplayProductList extends HttpServlet {
     	DaoProduct daoProduct = new DaoProduct();
         request.setAttribute("products", daoProduct.getAllProduct());
         
-        this.getServletContext().getRequestDispatcher( "/displayProductList.jsp" ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/displayProductList.jsp" ).forward( request, response );
     }
 }

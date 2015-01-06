@@ -16,5 +16,8 @@ public class AdminDeleteCustomer extends HttpServlet {
     	int id = Integer.parseInt(request.getParameter( "id" ));
 
     	daoCustomer.deleteCustomer(id);
+    	
+    	request.setAttribute("customers", daoCustomer.getAllCustomers());
+    	this.getServletContext().getRequestDispatcher( "/WEB-INF/adminDisplayCustomer.jsp" ).forward( request, response );
 	}
 }

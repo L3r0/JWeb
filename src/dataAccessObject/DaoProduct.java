@@ -13,15 +13,15 @@ import java.io.InputStream;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+import beans.Customer;
 import beans.Product;
 
 public class DaoProduct {
 	private Connection connection;
 
     public DaoProduct() {
-    	if (connection != null)
-            connection = connection;
-        else {
+    	if (connection == null)
+        {
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             InputStream inputStream = classLoader.getResourceAsStream("/dataAccessObject/properties");
 
@@ -53,6 +53,7 @@ public class DaoProduct {
             preparedStatement.setString(2, product.getDescription());
             preparedStatement.setString(3, product.getPrice());
             preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,6 +64,7 @@ public class DaoProduct {
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM Products WHERE id=?");
             preparedStatement.setInt(1, Id);
             preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -76,6 +78,7 @@ public class DaoProduct {
             preparedStatement.setString(2, product.getPrice());
             preparedStatement.setInt(3, product.getId());
             preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -94,9 +97,35 @@ public class DaoProduct {
                 product.setPrice(result.getString("price"));
                 productList.add(product);
             }
+            result.close();
+            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return productList;
+    }
+    
+    public Product getProduct(String name)
+    {
+    	Product product = new Product();
+    	try {
+    			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Products WHERE name=?");
+                preparedStatement.setString(1, name);
+                ResultSet result = preparedStatement.executeQuery();
+                while ( result.next() )
+                {
+                    product.setId(result.getInt("id"));
+                    product.setName(result.getString("name"));
+                    product.setDescription(result.getString("description"));
+                    product.setPrice(result.getString("price"));
+                }
+                result.close();
+                preparedStatement.close();
+        	}
+    	
+    	catch (SQLException e) {
+        e.printStackTrace();
+    	}
+    	return product;
     }
 }

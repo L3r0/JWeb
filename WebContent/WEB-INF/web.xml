@@ -7,7 +7,27 @@
 	
 	<servlet-mapping>
 		<servlet-name>CustomerCreation</servlet-name>
-		<url-pattern>/customerCreation</url-pattern>
+		<url-pattern>/CustomerCreation</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogIn</servlet-name>
+		<servlet-class>servlets.LogIn</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LogIn</servlet-name>
+		<url-pattern>/LogIn</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogOut</servlet-name>
+		<servlet-class>servlets.LogOut</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LogOut</servlet-name>
+		<url-pattern>/LogOut</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -51,12 +71,12 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>DisplayNews</servlet-name>
-		<servlet-class>servlets.DisplayNews</servlet-class>
+		<servlet-name>DisplayHome</servlet-name>
+		<servlet-class>servlets.DisplayHome</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>DisplayNews</servlet-name>
+		<servlet-name>DisplayHome</servlet-name>
 		<url-pattern>/Home</url-pattern>
 	</servlet-mapping>
 	
@@ -68,5 +88,25 @@
 	<servlet-mapping>
 		<servlet-name>AdminDeleteCustomer</servlet-name>
 		<url-pattern>/AdminDeleteCustomer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddToCart</servlet-name>
+		<servlet-class>servlets.AddToCart</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddToCart</servlet-name>
+		<url-pattern>/AddToCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DisplayCart</servlet-name>
+		<servlet-class>servlets.DisplayCart</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayCart</servlet-name>
+		<url-pattern>/DisplayCart</url-pattern>
 	</servlet-mapping>
 </web-app>

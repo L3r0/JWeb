@@ -13,6 +13,10 @@ import beans.Product;
 public class AdminProductCreation extends HttpServlet {
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+    	this.getServletContext().getRequestDispatcher( "/WEB-INF/adminCreateProduct.jsp" ).forward( request, response );
+    }
+	
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
     	String message = null;
     	DaoProduct daoProduct = new DaoProduct();
     	Product product = new Product();
@@ -30,6 +34,6 @@ public class AdminProductCreation extends HttpServlet {
         
         request.setAttribute("message", message);
         
-        this.getServletContext().getRequestDispatcher( "/adminDisplayProduct.jsp" ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( "/WEB-INF/displayInfo.jsp" ).forward( request, response );
     }
 }

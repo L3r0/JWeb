@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import dataAccessObject.DaoProduct;
 import beans.Cart;
 
+@SuppressWarnings("serial")
 public class AddToCart extends HttpServlet {
 
 	    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

@@ -12,6 +12,7 @@ import dataAccessObject.DaoCustomer;
 import beans.Customer;
 import beans.Cart;
 
+@SuppressWarnings("serial")
 public class LogIn extends HttpServlet {
 
 	    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -22,24 +23,26 @@ public class LogIn extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        String message = null;
 	    	DaoCustomer daoCustomer = new DaoCustomer();
-	    	Customer customer = new Customer();
+	    	Customer customer = null;
 	    	Cart cart = new Cart();
 	    	
 	    	customer = daoCustomer.getCustomer(request.getParameter("customerNickName"), request.getParameter("customerPassword"));
 	        
-	        if ( customer == null || customer.getName().trim().isEmpty() || customer.getNickName().trim().isEmpty() || customer.getPassword().trim().isEmpty() || customer.getFirstName().trim().isEmpty() || customer.getAdress().trim().isEmpty() || customer.getPhone().trim().isEmpty() || customer.getMail().trim().isEmpty()) {
+	        if (customer.getNickName() == null) {
 	            message = "Erreur - Pseudo ou mot de passe incorrect.";
+	            request.setAttribute("message", message);
+	            this.getServletContext().getRequestDispatcher( "/WEB-INF/displayInfo.jsp" ).forward( request, response );
+	            return;
 	        } else {
 	            message = "Vous êtes connecté.";
-	        }
-	    	
-	        session.setAttribute("cart", cart);
-	        session.setAttribute( "userSession", customer );
-	        request.setAttribute("message", message);
-
+	            request.setAttribute("message", message);
+	            session.setAttribute("cart", cart);
+	            session.setAttribute( "userSession", customer );
+	            
 	        if ( customer.getNickName().equals("admin") && customer.getPassword().equals("admin"))
 	        	this.getServletContext().getRequestDispatcher( "/WEB-INF/adminHome.jsp" ).forward( request, response );
 	        else
 	        	this.getServletContext().getRequestDispatcher( "/WEB-INF/displayInfo.jsp" ).forward( request, response );
 	        }
+	    }
 }

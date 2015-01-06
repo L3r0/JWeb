@@ -12,6 +12,7 @@ import beans.Customer;
 import dataAccessObject.DaoNews;
 import dataAccessObject.DaoProduct;
 
+@SuppressWarnings("serial")
 public class DisplayHome extends HttpServlet {
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

@@ -17,7 +17,7 @@
                     <br />
                         
                     <label for="customerPassword">Mot de passe<span class="requis">*</span></label>
-                    <input type="text" id="customerPassword" name="customerPassword" value="" size="20" maxlength="20" />
+                    <input type="password" id="customerPassword" name="customerPassword" value="" size="20" maxlength="20" />
                     <br />
                         
                     <label for="customerName">Nom<span class="requis">*</span></label>

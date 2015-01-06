@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.Cart;
 
+@SuppressWarnings("serial")
 public class DisplayCart extends HttpServlet {
 
 	    public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

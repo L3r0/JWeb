@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import dataAccessObject.DaoCustomer;
 import beans.Customer;
 
+@SuppressWarnings("serial")
 public class CustomerCreation extends HttpServlet {
 
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dataAccessObject.DaoCustomer;
 
+@SuppressWarnings("serial")
 public class AdminDeleteCustomer extends HttpServlet {
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

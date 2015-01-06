@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import dataAccessObject.DaoNews;
 import beans.News;
 
+@SuppressWarnings("serial")
 public class AdminNewsCreation extends HttpServlet {
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

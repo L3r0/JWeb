@@ -47,7 +47,7 @@ public class DaoCustomer {
 
     public void addCustomer(Customer customer) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Users(nickname, password, name, firstname, adress, phone, mail) values (?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Users(nickname, password, name, firstname, adress, phone, mail) values (?, MD5(?), ?, ?, ?, ?, ?)");
             preparedStatement.setString(1, customer.getNickName());
             preparedStatement.setString(2, customer.getPassword());
             preparedStatement.setString(3, customer.getName());

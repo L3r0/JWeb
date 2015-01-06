@@ -13,7 +13,6 @@ import java.io.InputStream;
 import java.sql.DriverManager;
 import java.util.Properties;
 
-import beans.Customer;
 import beans.Product;
 
 public class DaoProduct {
